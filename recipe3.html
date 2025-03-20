@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amitresto Recipe - Lemon Garlic Shrimp Risotto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #FF9800;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            font-size: 1.2rem;
+        }
+        
+        .recipe-rating {
+            margin: 20px 0;
+        }
+        
+        .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .recipe-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .recipe-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+        
+        .ingredients {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .ingredients h2, .directions h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FF9800;
+        }
+        
+        .ingredients ul {
+            list-style-type: none;
+        }
+        
+        .ingredients li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .ingredients li::before {
+            content: "•";
+            color: #FF9800;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .directions {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .directions ol {
+            list-style-position: inside;
+            counter-reset: step-counter;
+        }
+        
+        .directions li {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 40px;
+            counter-increment: step-counter;
+        }
+        
+        .directions li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #FF9800;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .direction-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .chef-tips {
+            background-color: #FFF3E0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .chef-tips h3 {
+            color: #E65100;
+            margin-bottom: 10px;
+        }
+        
+        .nutrition {
+            margin-top: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .nutrition h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FF9800;
+        }
+        
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .nutrition-item {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .nutrition-item p:first-child {
+            font-weight: bold;
+            color: #FF9800;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .recipe-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .recipe-image {
+                height: 300px;
+            }
+            
+            .direction-image {
+                height: 150px;
+            }
+        }
+        
+        .recipe-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            margin-bottom: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lemon Garlic Shrimp Risotto</h1>
+            <p>A zesty and creamy shrimp risotto with garlic and lemon</p>
+        </header>
+        
+        <div class="recipe-meta">
+            <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <span>Prep Time: 15 minutes</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-fire"></i>
+                <span>Cook Time: 30 minutes</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-users"></i>
+                <span>Servings: 4</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-chart-simple"></i>
+                <span>Difficulty: Medium</span>
+            </div>
+        </div>
+        
+        <div class="recipe-rating">
+            <span class="stars">★★★★☆</span>
+            <span>(4.5 from 85 ratings)</span>
+        </div>
+        
+        <img src="images/recipe3.jpeg" alt="Lemon Garlic Shrimp Risotto with fresh shrimp" class="recipe-image">
+        
+        <div class="recipe-content">
+            <div class="ingredients">
+                <h2>Ingredients</h2>
+                <ul>
+                    <li>1 pound (450g) large shrimp, peeled and deveined</li>
+                    <li>1 tablespoon olive oil</li>
+                    <li>2 cloves garlic, minced</li>
+                    <li>1 medium onion, diced</li>
+                    <li>1 1/2 cups Arborio rice</li>
+                    <li>1/2 cup dry white wine</li>
+                    <li>4 cups chicken broth</li>
+                    <li>1/2 cup grated Parmesan cheese</li>
+                    <li>2 tablespoons fresh lemon juice</li>
+                    <li>1 teaspoon lemon zest</li>
+                    <li>1/4 cup fresh parsley, chopped</li>
+                    <li>Salt and pepper to taste</li>
+                    <li>1 tablespoon butter</li>
+                </ul>
+            </div>
+            
+            <div class="directions">
+                <h2>Directions</h2>
+                <ol>
+                    <li>
+                        <p>Heat olive oil in a large skillet over medium heat. Add shrimp and cook for 2-3 minutes per side, until pink and cooked through. Remove shrimp from the skillet and set aside.</p>
+                    </li>
+                    <li>
+                        <p>In the same skillet, add onion and garlic. Cook for 3-4 minutes, until softened and fragrant.</p>
+                    </li>
+                    <li>
+                        <p>Add Arborio rice and stir to coat with the oil, cooking for 1-2 minutes.</p>
+                    </li>
+                    <li>
+                        <p>Pour in white wine and stir until mostly absorbed by the rice.</p>
+                    </li>
+                    <li>
+                        <p>Slowly add chicken broth, one ladle at a time, stirring continuously until absorbed before adding more broth. Continue this process until rice is tender and creamy (about 18-20 minutes).</p>
+                    </li>
+                    <li>
+                        <p>Stir in Parmesan cheese, butter, lemon juice, lemon zest, and cooked shrimp. Season with salt and pepper to taste.</p>
+                    </li>
+                    <li>
+                        <p>Serve immediately, garnished with parsley and extra lemon zest if desired.</p>
+                    </li>
+                </ol>
+                
+                <div class="chef-tips">
+                    <h3>Chef's Tips</h3>
+                    <p>For an extra burst of flavor, add a pinch of red pepper flakes when cooking the shrimp. Use homemade or low-sodium broth for a lighter version.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nutrition">
+            <h2>Nutrition Information</h2>
+            <div class="nutrition-grid">
+                <div class="nutrition-item">
+                    <p>550</p>
+                    <p>Calories</p>
+                </div>
+                <div class="nutrition-item">
+                    <p>20g</p>
+                    <p>Fat</p>
+                </div>
+                <div class="nutrition-item">
+                    <p>5g</p>
+                    <p>Saturated Fat</p>
+                </div>
+                <div class="nutrition-item">
+                    <p>30g</p>
+                    <p>Protein</p>
+                </div>
+                <div class="nutrition-item">
+                    <p>45g</p>
+                    <p>Carbohydrates</p>
+                </div>
+                <div class="nutrition-item">
+                    <p>4g</p>
+                    <p>Fiber</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recipe-author">
+            <img src="data:image/jpeg;base64,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" alt="Chef Maria Rossi" class="author-avatar">
+            <div class="author-info">
+                <h3>Chef Maria Rossi</h3>
+                <p>Risotto expert with a focus on Mediterranean cuisine. Dedicated to bringing fresh, flavorful dishes to the table.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

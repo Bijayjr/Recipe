@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.26/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <style>
+.overlay {
+    position: absolute;
+    top: 50%;  /* Adjust as needed */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg); /* Centers & rotates upside down */
+    z-index: 6; /* Ensures it appears above the plate image */
+}
+
+.overlay img {
+    width: 219%;
+    position: relative;
+    left: 115px;
+    top: 81px;
+}
+.hero-image:hover .overlay img,
+.overlay:hover img {
+    transform: scale(1.05); /* Increases size more on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="logo">Recipe</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#hacks">Kitchen Hacks</a></li>
+                <li><a href="#recipe">Recipes</a></li>
+                <li><a href="#foot">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <input type="text" class="search-bar" placeholder="Search...">
+                </div>
+                
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Craving something delicious?</h2>
+                <h1>Don't Wait</h1>
+                <p>Your Next Favorite Recipe Awaits!</p>
+                <a href="#" class="cta-button">Subscribe</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/food-img-1.png" style="" alt="Delicious dish with grilled chicken and vegetables" class="plate-image">
+                <div class="overlay">
+                    <img src="images/image.png">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Social Media Sidebar -->
+        <div class="social-sidebar">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <section class="facts" id="hacks">
+        <div class="fact-wrapper">
+            <h1 style="text-align: center;">some kitchen hacks</h1>
+            
+            <div class="parent">
+                <div class="div1">
+                    <div class="card">
+                        <h3>Cooking Tips & Tricks</h3>
+                        <p>Enhance your cooking with simple techniques like seasoning in layers, resting meat, and using room-temperature ingredients.</p>
+                        <a href="cooking_tips.html" style="text-decoration: none;">
+                            <button class="details-btn">Read More</button>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="div2">
+                    <div class="card">
+                        <h3>Ingredient Substitutes</h3>
+                        <p>Replace missing ingredients with easy alternatives like bananas for eggs, milk + vinegar for buttermilk, and oats for breadcrumbs.</p>
+                        <a href="ingredients.html" style="text-decoration: none;">
+                            <button class="details-btn">Read More</button>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="div3">
+                    <div class="card">
+                        <h3>Kitchen Hacks</h3>
+                        <p>Simplify cooking with hacks like peeling garlic easily, freezing herbs in oil, and preventing pots from boiling over.</p>
+                        <a href="kitchen_hacks.html" style="text-decoration: none;">
+                            <button class="details-btn">Read More</button>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="div4">
+                    <div class="card">
+                        <h3>Food Trends & Nutrition Guides</h3>
+                        <p>Discover trending foods like plant-based proteins and fermented foods while focusing on fiber, hydration, and reducing processed sugars.</p>
+                        <a href="nutrition.html" style="text-decoration: none;">
+                            <button class="details-btn">Read More</button>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="div5">
+                    <img src="images/images__1_-removebg-preview.png" alt="Placeholder Image">
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+    <section class="galary-section">
+        <div class="galary">
+            <div class="gb left">
+            <h1> Must-Try Recipes.</h1>
+            <div class="circle">
+                <img src="images/food-img-1.png" class="gplate" alt="plate for galary">
+            </div>
+            <p style="text-align: center;"><b>Delicious, Easy, and Flavor-Packed</b></p>
+            <p style="text-align: center;"> Discover a collection of mouthwatering recipes, from quick weeknight dinners to indulgent desserts, perfect for any occasion!!</p>
+        </div>
+        <div class="gb right">
+            <!-- Card 1 -->
+<div class="gcard">
+    <div class="card-image">
+        <img src="images/food-img-1.png" alt="Grilled Salmon">
+    </div>
+    <div class="card-content">
+        <h3 class="dish-name">Grilled Salmon</h3>
+        <p class="dish-description">Fresh Atlantic salmon fillet grilled to perfection with lemon herb butter and seasonal vegetables.</p>
+        <div class="dish-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-value">4.2/5</span>
+        </div>
+        <a href="recipe3.html" style="text-decoration: none;">
+            <button class="details-btn">View Details</button>
+        </a>
+        
+    </div>
+</div>
+
+<!-- Card 2 -->
+<div class="gcard">
+    <div class="card-image">
+        <img src="images/food-img-2.png" alt="Truffle Risotto">
+    </div>
+    <div class="card-content">
+        <h3 class="dish-name">Truffle Risotto</h3>
+        <p class="dish-description">Creamy Arborio rice slowly cooked with wild mushrooms, finished with black truffle and aged Parmesan.</p>
+        <div class="dish-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-value">4.8/5</span>
+        </div>
+        <a href="recipe1.html" style="text-decoration: none;">
+            <button class="details-btn">View Details</button>
+        </a>
+        
+    </div>
+</div>
+
+<!-- Card 4 -->
+<div class="gcard">
+    <div class="card-image">
+        <img src="images/food-img-3.png" alt="Vegetable Curry">
+    </div>
+    <div class="card-content">
+        <h3 class="dish-name">Vegetable Curry</h3>
+        <p class="dish-description">Seasonal vegetables simmered in aromatic spices and coconut milk, served with fragrant basmati rice.</p>
+        <div class="dish-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-value">4.3/5</span>
+        </div>
+        <a href="recipe2.html" style="text-decoration: none;">
+            <button class="details-btn">View Details</button>
+        </a>
+        
+    </div>
+</div>
+    </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Meal Cards</title>
+    <script src="https://unpkg.com/scrollreveal"></script> <!-- ScrollReveal Library -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+</head>
+<body>
+
+<section class="recipes" id="recipe">
+    <h1 style="margin: 30px;">Trending</h1>
+    <div class="meal-container">
+        <div class="meal-card">
+            <img src="images/19L2ucjQneoEANPzyfiQ_0S9A6363.webp" alt="Meal 1">
+            <a href="recipe1.html" class="meal-link">Chocolate Lava Cake</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/7GmgWw4TTUCCw7xGKQAP_0S9A6434.webp" alt="Meal 2">
+            <a href="recipe3.html" class="meal-link">Loaded Baked Potato Soup
+            </a>
+        </div>
+        <div class="meal-card">
+            <img src="images/aB9Ar2MzTy2CIyxoINma_b.webp" alt="Meal 3">
+            <a href="recipe2.html" class="meal-link">Vegetable Stir-Fry with Tofu</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/aeAtoOWHSeWQh9UD7W3K_0S9A6192.webp" alt="Meal 4">
+            <a href="recipe1.html" class="meal-link">Beef Stroganoff with Egg Noodles
+            </a>
+        </div>
+    </div>
+
+    <h1 style="margin: 30px; text-align: start;">Fan Favorite</h1>
+    <div class="meal-container">
+        <div class="meal-card">
+            <img src="images/D30C2lxTy6SAflQlb61Q_VP 4 - final_2.webp" alt="Meal 5">
+            <a href="recipe2.html" class="meal-link">Classic Margherita Pizza</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/G9Ez7rFmQOmtdHERTPgK_AWC 4 - final_2.webp" alt="Meal 6">
+            <a href="recipe1.html" class="meal-link">Lemon Herb Grilled Salmon</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/IrDuUPieR1GP9vviVyiM_restaurant-teriyaki-sauce-133751_-5.webp" alt="Meal 7">
+            <a href="recipe3.html" class="meal-link">BBQ Pulled Pork Sandwiches</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/j7L11nRQNeKACth1WJkg_easy-beef-broccoli-stir-fry-6106.webp" alt="Meal 8">
+            <a href="recipe2.html" class="meal-link">Creamy Mushroom Risotto</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/N7DcpuhBRW2ahWsyzNAw_0S9A6275.webp" alt="Meal 9">
+            <a href="recipe1.html" class="meal-link">Spicy Shrimp Tacos with Mango Salsa</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/NrPa79ZESEOqMlMoFDos_fajitas-3.webp" alt="Meal 10">
+            <a href="recipe3.html" class="meal-link">Garlic Butter Chicken with Roasted Veggies</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/omZbv836RCmfVJbCHwx8-Chocolate-Mousse---8995--1.webp" alt="Meal 11">
+            <a href="recipe2.html" class="meal-link">Honey Garlic Glazed Chicken Wings</a>
+        </div>
+        <div class="meal-card">
+            <img src="images/TvOnvpOTwKdXtHZ92oko_carrot-cake-natural-cream-cheese-frosting-9015.webp" alt="Meal 12">
+            <a href="recipe1.html" class="meal-link">Stuffed Bell Peppers with Quinoa and Cheese</a>
+        </div>
+    </div>
+</section>
+<footer class="footer" id="foot">
+    <div class="footer-container">
+        <!-- Social Media Links -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="quick-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#recipe">Recipes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#foot">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-section">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 Recipe Website. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- <script>
+    // ScrollReveal Animation for .gcard elements
+ScrollReveal().reveal('.gcard', {
+    duration: 1000,     // Animation duration (in ms)
+    origin: 'bottom',   // Animation starts from bottom
+    distance: '50px',   // Moves up by 50px
+    easing: 'ease-in-out',
+    delay: 200,         // Delay before animation starts
+    interval: 150,      // Stagger effect
+    reset: true         // Allows animation to replay when scrolling up/down
+});
+
+</script> -->
+
+<script>
+   // ScrollReveal Animations
+ScrollReveal().reveal('.meal-card', {
+    duration: 1000,     // Animation duration (in ms)
+    origin: 'bottom',   // Animation starts from bottom
+    distance: '50px',   // Moves up by 50px
+    easing: 'ease-in-out',
+    delay: 200,         // Delay before animation starts
+    interval: 150,      // Staggered animation effect
+    reset: true         // Allows animation to replay when scrolling up/down
+});
+
+</script>
+
+<script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+    </script>
+    <!-- <script>
+        ScrollReveal().reveal('.overlay img', {
+            duration: 1000,  // Animation duration in milliseconds
+            scale: 1.3,      // Scales the overlay image
+            delay: 300,      // Delay before animation starts
+            reset: true     // Ensures it doesn't repeat on scroll up
+        });
+    </script> -->
+    
+    <script>
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.div5 img', {
+            delay: 500, // Delay before animation starts
+            distance: '80px', // Distance to move
+            origin: 'bottom', // Animation starts from the bottom
+            opacity: 0, // Start invisible
+            easing: 'ease-in-out', // Smooth easing
+            duration: 1000, // Animation duration
+            reset: true // Reset animation on scroll up
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
